@@ -1,4 +1,5 @@
 import { defineRouter } from '#q-app';
+import { useAuthStore } from '../stores/auth';
 import {
   createMemoryHistory,
   createRouter,
@@ -33,6 +34,13 @@ export default defineRouter((/* { store, ssrContext } */) => {
     // quasar.conf.js -> build -> publicPath
     history: createHistory(import.meta.env.QUASAR_VUE_ROUTER_BASE),
   });
-
+    
+  Router.beforeEach((to) => {
+    const auth = useAuthStore();
+    if (to.meta.requiresAuth && !auth.isAuthenticated) {
+      return '/login';
+    }
+    return true;
+  });
   return Router;
 });
