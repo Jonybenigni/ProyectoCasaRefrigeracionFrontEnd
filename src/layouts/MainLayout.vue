@@ -69,6 +69,12 @@ const linksList: EssentialLinkProps[] = [
     icon: 'people',
     link: '/customers',
   },
+  {
+    title: 'Productos',
+    caption: 'Listado de productos',
+    icon: 'inventory_2',
+    link: '/products',
+  },
 ];
 
 const leftDrawerOpen = ref(false);
