@@ -23,6 +23,16 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/pages/Product/ProductsPage.vue'),
         meta: { requiresAuth: true },
       },
+      {
+        path: '/tasks',
+        component: () => import('@/pages/TaskItem/TaskItemsPage.vue'),
+        meta: { requiresAuth: true },
+      },
+      {
+        path: '/pending-jobs',
+        component: () => import('@/pages/PendingJob/PendingJobsPage.vue'),
+        meta: { requiresAuth: true },
+      },
       { path: 'second', component: () => import('@/pages/SecondPage.vue') },
     ],
   },

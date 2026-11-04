@@ -75,6 +75,18 @@ const linksList: EssentialLinkProps[] = [
     icon: 'inventory_2',
     link: '/products',
   },
+  {
+    title: 'Tareas',
+    caption: 'Listado de tareas',
+    icon: 'task_alt',
+    link: '/tasks',
+  },
+  {
+    title: 'Trabajos pendientes',
+    caption: 'Trabajos y cobros a clientes',
+    icon: 'build',
+    link: '/pending-jobs',
+  },
 ];
 
 const leftDrawerOpen = ref(false);
