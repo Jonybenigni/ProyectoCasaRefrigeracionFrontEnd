@@ -1,7 +1,7 @@
 <template>
   <q-card style="min-width: 420px">
     <q-card-section>
-      <div class="text-h6">Nueva relacion</div>
+      <div class="text-h6">Nueva relación</div>
     </q-card-section>
     <q-separator />
 
@@ -20,7 +20,7 @@
           class="q-mb-sm"
           :loading="productStore.loading"
           lazy-rules
-          :rules="[(v: number | null) => v !== null || 'Elegi un producto']"
+          :rules="[(v: number | null) => v !== null || 'Elegí un producto']"
         />
         <q-select
           v-model="form.supplierId"
@@ -34,7 +34,7 @@
           class="q-mb-sm"
           :loading="supplierStore.loading"
           lazy-rules
-          :rules="[(v: number | null) => v !== null || 'Elegi un proveedor']"
+          :rules="[(v: number | null) => v !== null || 'Elegí un proveedor']"
         />
       </q-form>
     </q-card-section>
@@ -89,7 +89,7 @@ async function onSubmit() {
     await productSupplierStore.create(form.value);
     emit('close');
   } catch {
-    notificarError('No se pudo guardar la relacion');
+    notificarError('No se pudo guardar la relación');
   }
 }
 </script>

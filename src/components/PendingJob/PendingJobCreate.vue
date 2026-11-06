@@ -24,17 +24,17 @@
           class="q-mb-sm"
           :loading="customerStore.loading"
           lazy-rules
-          :rules="[(v: number | null) => v !== null || 'Elegi un cliente']"
+          :rules="[(v: number | null) => v !== null || 'Elegí un cliente']"
         />
         <q-input
           v-model="form.description"
-          label="Descripcion del trabajo"
+          label="Descripción del trabajo"
           type="textarea"
           autogrow
           outlined
           class="q-mb-sm"
           lazy-rules
-          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresa la descripcion']"
+          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresá la descripción']"
         />
         <q-input
           v-model.number="form.amount"
@@ -46,7 +46,7 @@
           outlined
           class="q-mb-sm"
           lazy-rules
-          :rules="[(v: number) => (typeof v === 'number' && v > 0) || 'Ingresa un monto mayor a 0']"
+          :rules="[(v: number) => (typeof v === 'number' && v > 0) || 'Ingresá un monto mayor a 0']"
         />
 
         <!-- La fecha se guarda como texto ISO (yyyy-MM-dd), que es lo que espera la API -->
@@ -55,9 +55,9 @@
           label="Fecha del trabajo"
           outlined
           mask="####-##-##"
-          hint="aaaa-mm-dd"
+          hint="Año, mes y día"
           lazy-rules
-          :rules="[(v: string) => (!!v && v.length === 10) || 'Ingresa la fecha']"
+          :rules="[(v: string) => (!!v && v.length === 10) || 'Ingresá la fecha']"
         >
           <template #append>
             <q-icon name="event" class="cursor-pointer">

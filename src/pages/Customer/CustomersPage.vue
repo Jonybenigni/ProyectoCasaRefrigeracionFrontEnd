@@ -68,7 +68,7 @@
           <span class="text-h6">Confirmar</span>
         </q-card-section>
         <q-card-section
-          >Se va a eliminar el cliente. Esta accion no se puede deshacer.</q-card-section
+          >Se va a eliminar el cliente. Esta acción no se puede deshacer.</q-card-section
         >
         <q-card-actions align="right">
           <q-btn flat label="Cancelar" v-close-popup />
@@ -98,8 +98,8 @@ const idABorrar = ref<number | null>(null);
 const columns: QTableColumn<CustomerResponseDto>[] = [
   { name: 'id', label: 'Id', field: 'id', align: 'left', sortable: true },
   { name: 'name', label: 'Nombre', field: 'name', align: 'left', sortable: true },
-  { name: 'phoneNumber', label: 'Telefono', field: 'phoneNumber', align: 'left' },
-  { name: 'address', label: 'Direccion', field: 'address', align: 'left' },
+  { name: 'phoneNumber', label: 'Teléfono', field: 'phoneNumber', align: 'left' },
+  { name: 'address', label: 'Dirección', field: 'address', align: 'left' },
   { name: 'taxId', label: 'CUIT', field: 'taxId', align: 'left' },
   { name: 'acciones', label: 'Acciones', field: 'id', align: 'right', sortable: false },
 ];

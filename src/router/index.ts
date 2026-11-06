@@ -38,7 +38,7 @@ export default defineRouter((/* { store, ssrContext } */) => {
   Router.beforeEach((to) => {
     const auth = useAuthStore();
     if (to.meta.requiresAuth && !auth.isAuthenticated) {
-      return '/login';
+      return '/';
     }
     return true;
   });

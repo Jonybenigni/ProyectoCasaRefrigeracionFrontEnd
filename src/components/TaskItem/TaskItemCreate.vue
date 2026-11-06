@@ -9,16 +9,16 @@
       <q-form ref="formRef" greedy @submit.prevent="onSubmit">
         <q-input
           v-model="form.title"
-          label="Titulo"
+          label="Título"
           outlined
           class="q-mb-sm"
           lazy-rules
-          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresa el titulo']"
+          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresá el título']"
         />
         <!-- La descripcion es opcional: no lleva reglas -->
         <q-input
           v-model="form.description"
-          label="Descripcion"
+          label="Descripción"
           type="textarea"
           autogrow
           outlined
@@ -31,9 +31,9 @@
           label="Fecha de vencimiento"
           outlined
           mask="####-##-##"
-          hint="aaaa-mm-dd"
+          hint="Año, mes y día"
           lazy-rules
-          :rules="[(v: string) => (!!v && v.length === 10) || 'Ingresa la fecha']"
+          :rules="[(v: string) => (!!v && v.length === 10) || 'Ingresá la fecha']"
         >
           <template #append>
             <q-icon name="event" class="cursor-pointer">

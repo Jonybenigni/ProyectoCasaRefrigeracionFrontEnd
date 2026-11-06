@@ -13,12 +13,12 @@
           outlined
           class="q-mb-sm"
           lazy-rules
-          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresa el nombre']"
+          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresá el nombre']"
         />
         <!-- La descripcion es opcional: no lleva reglas -->
         <q-input
           v-model="form.description"
-          label="Descripcion"
+          label="Descripción"
           type="textarea"
           autogrow
           outlined
@@ -35,17 +35,17 @@
             outlined
             class="col-6"
             lazy-rules
-            :rules="[(v: number) => esEnteroPositivo(v) || 'Ingresa un numero entero, 0 o mas']"
+            :rules="[(v: number) => esEnteroPositivo(v) || 'Ingresá un número entero, 0 o más']"
           />
           <q-input
             v-model.number="form.minimumStock"
-            label="Stock minimo"
+            label="Stock mínimo"
             type="number"
             min="0"
             outlined
             class="col-6"
             lazy-rules
-            :rules="[(v: number) => esEnteroPositivo(v) || 'Ingresa un numero entero, 0 o mas']"
+            :rules="[(v: number) => esEnteroPositivo(v) || 'Ingresá un número entero, 0 o más']"
           />
         </div>
         <q-input
@@ -58,7 +58,7 @@
           outlined
           class="q-mt-sm"
           lazy-rules
-          :rules="[(v: number) => (typeof v === 'number' && v > 0) || 'Ingresa un precio mayor a 0']"
+          :rules="[(v: number) => (typeof v === 'number' && v > 0) || 'Ingresá un precio mayor a 0']"
         />
       </q-form>
     </q-card-section>

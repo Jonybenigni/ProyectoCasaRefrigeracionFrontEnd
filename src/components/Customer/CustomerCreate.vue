@@ -13,24 +13,24 @@
           outlined
           class="q-mb-sm"
           lazy-rules
-          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresa el nombre']"
+          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresá el nombre']"
         />
         <q-input
           v-model="form.phoneNumber"
-          label="Telefono"
+          label="Teléfono"
           outlined
           class="q-mb-sm"
           lazy-rules
-          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresa el numero de telefono']"
+          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresá el teléfono']"
         />
 
         <q-input
           v-model="form.address"
-          label="Direccion"
+          label="Dirección"
           outlined
           class="q-mb-sm"
           lazy-rules
-          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresa la direccion']"
+          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresá la dirección']"
         />
 
         <q-input
@@ -40,8 +40,8 @@
           class="q-mb-sm"
           lazy-rules
           :rules="[
-            (v: string) => (!!v && v.trim().length > 0) || 'Ingresa el CUIT',
-            (v: string) => /^\d{11}$/.test(v) || 'El CUIT tiene 11 numeros',
+            (v: string) => (!!v && v.trim().length > 0) || 'Ingresá el CUIT',
+            (v: string) => /^\d{11}$/.test(v) || 'El CUIT tiene 11 números',
           ]"
         />
       </q-form>

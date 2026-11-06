@@ -8,18 +8,17 @@
 // Your own variables (that are declared here) and Quasar's own
 // ones will be available out of the box in your .vue/.scss/.sass files
 
-// It's highly recommended to change the default colors
-// to match your app's branding.
-// Tip: Use the "Theme Builder" on Quasar's documentation website.
-
-$primary: #1976d2;
-$secondary: #26a69a;
-$accent: #9c27b0;
+// Colores de la marca J.B Refrigeracion
+$primary: #0b2559; // azul marino
+$secondary: #1e7be6; // azul electrico
+$accent: #8ec9ff; // celeste
 
 $dark: #1d1d1d;
 $dark-page: #121212;
 
-$positive: #21ba45;
+$positive: #1b8a3a;
 $negative: #c10015;
-$info: #31ccec;
+$info: #1e7be6;
 $warning: #f2c037;
+
+$typography-font-family: 'Archivo Variable', 'Segoe UI', Roboto, Arial, sans-serif;

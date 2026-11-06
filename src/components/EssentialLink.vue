@@ -6,14 +6,16 @@
     :target="isExternal ? '_blank' : undefined"
     :rel="isExternal ? 'noopener noreferrer' : undefined"
     :to="isExternal ? undefined : link"
+    :exact="link === '/'"
+    active-class="link-activo"
   >
-    <q-item-section v-if="icon" avatar>
+    <q-item-section v-if="icon" avatar class="link-icono">
       <q-icon :name="icon" />
     </q-item-section>
 
     <q-item-section>
       <q-item-label>{{ title }}</q-item-label>
-      <q-item-label caption>{{ caption }}</q-item-label>
+      <q-item-label v-if="caption" caption>{{ caption }}</q-item-label>
     </q-item-section>
   </q-item>
 </template>
@@ -37,3 +39,16 @@ const props = withDefaults(defineProps<EssentialLinkProps>(), {
 // Links externos (http, mailto...) abren otra pestana; los internos navegan con el router
 const isExternal = computed(() => /^(https?:)?\/\/|^mailto:|^tel:/.test(props.link));
 </script>
+
+<style scoped>
+.link-icono {
+  min-width: 40px;
+}
+
+/* La pantalla en la que se esta parado */
+.link-activo {
+  background: var(--q-secondary);
+  color: #fff;
+  font-weight: 600;
+}
+</style>

@@ -1,1 +1,55 @@
 // app global css
+
+// Fondo hielo de la marca
+body {
+  background: #eaf2fc;
+  color: $primary;
+}
+
+// Las tarjetas de las paginas van con una linea fina en vez de sombra
+.q-page .q-card {
+  border: 1px solid #d3e2f5;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.q-page .text-h6 {
+  font-weight: 700;
+}
+
+// Encabezado de las tablas
+.q-table thead tr {
+  background: #f3f8fe;
+}
+
+.q-table thead th {
+  color: $primary;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.q-table tbody td {
+  font-size: 14px;
+}
+
+.q-btn {
+  text-transform: none;
+  font-weight: 600;
+}
+
+// Sin sesion, la app queda borrosa detras del popup de login
+.fondo-bloqueado {
+  filter: blur(4px);
+  pointer-events: none;
+  user-select: none;
+}
+
+// La tabla ya esta adentro de una tarjeta: no necesita otra sombra
+.q-page .q-table__card {
+  box-shadow: none;
+}
+
+.q-page .q-card > .q-card__section:has(> .q-table__container) {
+  padding-left: 0;
+  padding-right: 0;
+}

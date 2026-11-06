@@ -35,7 +35,7 @@ export default defineBoot(({ app, router }) => {
     (error: unknown) => {
       if (isAxiosError(error) && error.response?.status === 401) {
         useAuthStore().logout();
-        void router.push('/login');
+        void router.push('/');
       }
       return Promise.reject(error instanceof Error ? error : new Error(String(error)));
     },

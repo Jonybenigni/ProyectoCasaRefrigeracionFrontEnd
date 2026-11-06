@@ -13,7 +13,7 @@
           outlined
           class="q-mb-sm"
           lazy-rules
-          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresa el nombre']"
+          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresá el nombre']"
         />
         <q-input
           v-model="form.category"
@@ -21,15 +21,15 @@
           outlined
           class="q-mb-sm"
           lazy-rules
-          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresa el rubro']"
+          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresá el rubro']"
         />
         <q-input
           v-model="form.phoneNumber"
-          label="Telefono"
+          label="Teléfono"
           outlined
           class="q-mb-sm"
           lazy-rules
-          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresa el numero de telefono']"
+          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresá el teléfono']"
         />
 
         <q-input
@@ -38,16 +38,16 @@
           outlined
           class="q-mb-sm"
           lazy-rules
-          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresa el Email']"
+          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresá el Email']"
         />
 
         <q-input
           v-model="form.address"
-          label="Direccion"
+          label="Dirección"
           outlined
           class="q-mb-sm"
           lazy-rules
-          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingrese la Direccion']"
+          :rules="[(v: string) => (!!v && v.trim().length > 0) || 'Ingresá la dirección']"
         />
       </q-form>
     </q-card-section>

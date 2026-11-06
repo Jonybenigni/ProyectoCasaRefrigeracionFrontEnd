@@ -6,7 +6,6 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('@/pages/IndexPage.vue') },
-      { path: '/login', component: () => import('@/pages/Auth/LoginPage.vue') },
       // requiresAuth: el guard del router (router/index.ts) exige sesion iniciada
       {
         path: '/suppliers',

@@ -38,7 +38,7 @@ export const useProductSupplierStore = defineStore('productSupplier', () => {
     loading.value = true;
     try {
       await api.post('/ProductSuppliers', productSupplier);
-      notificarExito('Relacion creada');
+      notificarExito('Relación creada');
     } finally {
       loading.value = false;
     }
@@ -49,7 +49,7 @@ export const useProductSupplierStore = defineStore('productSupplier', () => {
     loading.value = true;
     try {
       await api.delete(`/ProductSuppliers/${id}`);
-      notificarExito('Relacion eliminada');
+      notificarExito('Relación eliminada');
     } finally {
       loading.value = false;
     }

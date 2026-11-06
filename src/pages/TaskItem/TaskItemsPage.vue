@@ -68,7 +68,7 @@
           <span class="text-h6">Confirmar</span>
         </q-card-section>
         <q-card-section
-          >Se va a eliminar la tarea. Esta accion no se puede deshacer.</q-card-section
+          >Se va a eliminar la tarea. Esta acción no se puede deshacer.</q-card-section
         >
         <q-card-actions align="right">
           <q-btn flat label="Cancelar" v-close-popup />
@@ -97,8 +97,8 @@ const idABorrar = ref<number | null>(null);
 
 const columns: QTableColumn<TaskItemResponseDto>[] = [
   { name: 'id', label: 'Id', field: 'id', align: 'left', sortable: true },
-  { name: 'title', label: 'Titulo', field: 'title', align: 'left', sortable: true },
-  { name: 'description', label: 'Descripcion', field: 'description', align: 'left' },
+  { name: 'title', label: 'Título', field: 'title', align: 'left', sortable: true },
+  { name: 'description', label: 'Descripción', field: 'description', align: 'left' },
   {
     name: 'expirationDate',
     label: 'Vencimiento',
@@ -114,7 +114,7 @@ const columns: QTableColumn<TaskItemResponseDto>[] = [
     field: 'isCompleted',
     align: 'center',
     sortable: true,
-    format: (val: boolean) => (val ? 'Si' : 'No'),
+    format: (val: boolean) => (val ? 'Sí' : 'No'),
   },
   { name: 'acciones', label: 'Acciones', field: 'id', align: 'right', sortable: false },
 ];

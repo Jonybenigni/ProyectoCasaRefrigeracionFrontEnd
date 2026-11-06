@@ -18,7 +18,7 @@
           </template>
         </q-input>
         <q-btn round unelevated color="primary" icon="add" @click="mostrarFormulario = true">
-          <q-tooltip>Nueva relacion</q-tooltip>
+          <q-tooltip>Nueva relación</q-tooltip>
         </q-btn>
         <q-btn flat round icon="refresh" :loading="productSupplierStore.loading" @click="recargar">
           <q-tooltip>Actualizar</q-tooltip>
@@ -64,7 +64,7 @@
           <span class="text-h6">Confirmar</span>
         </q-card-section>
         <q-card-section
-          >Se va a eliminar la relacion. Esta accion no se puede deshacer.</q-card-section
+          >Se va a eliminar la relación. Esta acción no se puede deshacer.</q-card-section
         >
         <q-card-actions align="right">
           <q-btn flat label="Cancelar" v-close-popup />
@@ -117,7 +117,7 @@ async function eliminar() {
       await productSupplierStore.borrar(idABorrar.value);
     }
   } catch {
-    notificarError('No se pudo eliminar la relacion');
+    notificarError('No se pudo eliminar la relación');
   } finally {
     confirmandoBaja.value = false;
     recargar();

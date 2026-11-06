@@ -68,7 +68,7 @@
           <span class="text-h6">Confirmar</span>
         </q-card-section>
         <q-card-section
-          >Se va a eliminar el proveedor. Esta accion no se puede deshacer.</q-card-section
+          >Se va a eliminar el proveedor. Esta acción no se puede deshacer.</q-card-section
         >
         <q-card-actions align="right">
           <q-btn flat label="Cancelar" v-close-popup />
@@ -99,9 +99,9 @@ const columns: QTableColumn<SupplierResponseDto>[] = [
   { name: 'id', label: 'Id', field: 'id', align: 'left', sortable: true },
   { name: 'name', label: 'Nombre', field: 'name', align: 'left', sortable: true },
   { name: 'category', label: 'Rubro', field: 'category', align: 'left', sortable: true },
-  { name: 'phoneNumber', label: 'Telefono', field: 'phoneNumber', align: 'left' },
+  { name: 'phoneNumber', label: 'Teléfono', field: 'phoneNumber', align: 'left' },
   { name: 'mail', label: 'Email', field: 'mail', align: 'left' },
-  { name: 'address', label: 'Direccion', field: 'address', align: 'left' },
+  { name: 'address', label: 'Dirección', field: 'address', align: 'left' },
   { name: 'acciones', label: 'Acciones', field: 'id', align: 'right', sortable: false },
 ];
 

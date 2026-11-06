@@ -1,32 +1,53 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
+  <q-layout view="hHh Lpr lFf">
+    <q-header class="bg-white text-primary barra-marca" :class="{ 'fondo-bloqueado': !auth.isAuthenticated }">
+      <q-toolbar class="barra-marca__contenido">
+        <q-btn
+          v-if="auth.isAuthenticated"
+          flat
+          dense
+          round
+          icon="menu"
+          aria-label="Abrir o cerrar el menú"
+          @click="toggleLeftDrawer"
+        />
 
-        <q-toolbar-title> Refrigeracion </q-toolbar-title>
+        <router-link to="/" class="q-ml-sm" aria-label="Ir al inicio">
+          <img src="@/assets/logo-jb.png" alt="J.B Refrigeración" class="logo-barra" />
+        </router-link>
 
-        <!-- Con sesion: nombre de usuario y boton para salir. Sin sesion: boton para ingresar -->
+        <q-space />
+
         <template v-if="auth.isAuthenticated">
           <q-icon name="person" class="q-mr-xs" />
           <span class="q-mr-md">{{ auth.userName }}</span>
           <q-btn flat dense label="Salir" icon="logout" @click="onLogout" />
         </template>
-        <q-btn v-else flat dense label="Ingresar" icon="login" to="/login" />
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
-      <q-list>
-        <q-item-label header> Essential Links </q-item-label>
+    <q-drawer
+      v-if="auth.isAuthenticated"
+      v-model="leftDrawerOpen"
+      show-if-above
+      :width="250"
+      class="bg-primary text-white"
+    >
+      <q-list dark class="q-pt-md">
+        <EssentialLink v-bind="inicio" />
 
-        <EssentialLink v-for="link in linksList" :key="link.title" v-bind="link" />
+        <template v-for="grupo in grupos" :key="grupo.titulo">
+          <q-item-label header class="titulo-grupo">{{ grupo.titulo }}</q-item-label>
+          <EssentialLink v-for="link in grupo.links" :key="link.title" v-bind="link" />
+        </template>
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container :class="{ 'fondo-bloqueado': !auth.isAuthenticated }">
       <router-view />
     </q-page-container>
+
+    <LoginModal />
   </q-layout>
 </template>
 
@@ -34,6 +55,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import EssentialLink, { type EssentialLinkProps } from '@/components/EssentialLink.vue';
+import LoginModal from '@/components/Auth/LoginModal.vue';
 import { useAuthStore } from '@/stores/auth';
 
 const auth = useAuthStore();
@@ -41,63 +63,29 @@ const router = useRouter();
 
 async function onLogout() {
   auth.logout();
-  await router.push('/login');
+  await router.push('/');
 }
 
-const linksList: EssentialLinkProps[] = [
+const inicio: EssentialLinkProps = { title: 'Inicio', icon: 'home', link: '/' };
+
+// El menu separa lo que es atender al cliente de lo que es manejar la mercaderia
+const grupos: { titulo: string; links: EssentialLinkProps[] }[] = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev',
+    titulo: 'Atención',
+    links: [
+      { title: 'Clientes', icon: 'people', link: '/customers' },
+      { title: 'Trabajos pendientes', icon: 'build', link: '/pending-jobs' },
+      { title: 'Tareas', icon: 'task_alt', link: '/tasks' },
+    ],
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework',
-  },
-  {
-    title: 'Proveedores',
-    caption: 'Listado de proveedores',
-    icon: 'local_shipping',
-    link: '/suppliers',
-  },
-  {
-    title: 'Clientes',
-    caption: 'Listado de clientes',
-    icon: 'people',
-    link: '/customers',
-  },
-  {
-    title: 'Productos',
-    caption: 'Listado de productos',
-    icon: 'inventory_2',
-    link: '/products',
-  },
-  {
-    title: 'Tareas',
-    caption: 'Listado de tareas',
-    icon: 'task_alt',
-    link: '/tasks',
-  },
-  {
-    title: 'Trabajos pendientes',
-    caption: 'Trabajos y cobros a clientes',
-    icon: 'build',
-    link: '/pending-jobs',
-  },
-  {
-    title: 'Pagos a proveedores',
-    caption: 'Pagos hechos y pendientes',
-    icon: 'payments',
-    link: '/supplier-payments',
-  },
-  {
-    title: 'Productos por proveedor',
-    caption: 'Que producto vende cada proveedor',
-    icon: 'link',
-    link: '/product-suppliers',
+    titulo: 'Mercadería',
+    links: [
+      { title: 'Productos', icon: 'inventory_2', link: '/products' },
+      { title: 'Proveedores', icon: 'local_shipping', link: '/suppliers' },
+      { title: 'Pagos a proveedores', icon: 'payments', link: '/supplier-payments' },
+      { title: 'Productos por proveedor', icon: 'link', link: '/product-suppliers' },
+    ],
   },
 ];
 
@@ -107,3 +95,33 @@ function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
 </script>
+
+<style scoped>
+.barra-marca__contenido {
+  min-height: 68px;
+}
+
+/* La misma linea del logo: azul marino que termina en azul electrico */
+.barra-marca::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--q-primary) 0 84%,
+    var(--q-secondary) 84% 100%
+  );
+}
+
+.logo-barra {
+  display: block;
+  height: 52px;
+}
+
+.titulo-grupo {
+  color: var(--q-accent);
+  font-size: 13px;
+  font-weight: 600;
+  padding-bottom: 6px;
+}
+</style>

@@ -68,7 +68,7 @@
           <span class="text-h6">Confirmar</span>
         </q-card-section>
         <q-card-section
-          >Se va a eliminar el trabajo. Esta accion no se puede deshacer.</q-card-section
+          >Se va a eliminar el trabajo. Esta acción no se puede deshacer.</q-card-section
         >
         <q-card-actions align="right">
           <q-btn flat label="Cancelar" v-close-popup />
@@ -99,7 +99,7 @@ const columns: QTableColumn<PendingJobResponseDto>[] = [
   { name: 'id', label: 'Id', field: 'id', align: 'left', sortable: true },
   // customerName lo arma la API: la tabla no necesita el store de clientes
   { name: 'customerName', label: 'Cliente', field: 'customerName', align: 'left', sortable: true },
-  { name: 'description', label: 'Descripcion', field: 'description', align: 'left' },
+  { name: 'description', label: 'Descripción', field: 'description', align: 'left' },
   {
     name: 'amount',
     label: 'Monto',

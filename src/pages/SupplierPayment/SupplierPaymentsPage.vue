@@ -68,7 +68,7 @@
           <span class="text-h6">Confirmar</span>
         </q-card-section>
         <q-card-section
-          >Se va a eliminar el pago. Esta accion no se puede deshacer.</q-card-section
+          >Se va a eliminar el pago. Esta acción no se puede deshacer.</q-card-section
         >
         <q-card-actions align="right">
           <q-btn flat label="Cancelar" v-close-popup />

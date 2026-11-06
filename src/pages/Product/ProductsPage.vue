@@ -68,7 +68,7 @@
           <span class="text-h6">Confirmar</span>
         </q-card-section>
         <q-card-section
-          >Se va a eliminar el producto. Esta accion no se puede deshacer.</q-card-section
+          >Se va a eliminar el producto. Esta acción no se puede deshacer.</q-card-section
         >
         <q-card-actions align="right">
           <q-btn flat label="Cancelar" v-close-popup />
@@ -98,9 +98,9 @@ const idABorrar = ref<number | null>(null);
 const columns: QTableColumn<ProductResponseDto>[] = [
   { name: 'id', label: 'Id', field: 'id', align: 'left', sortable: true },
   { name: 'name', label: 'Nombre', field: 'name', align: 'left', sortable: true },
-  { name: 'description', label: 'Descripcion', field: 'description', align: 'left' },
+  { name: 'description', label: 'Descripción', field: 'description', align: 'left' },
   { name: 'currentStock', label: 'Stock actual', field: 'currentStock', align: 'right', sortable: true },
-  { name: 'minimumStock', label: 'Stock minimo', field: 'minimumStock', align: 'right', sortable: true },
+  { name: 'minimumStock', label: 'Stock mínimo', field: 'minimumStock', align: 'right', sortable: true },
   {
     name: 'price',
     label: 'Precio',
