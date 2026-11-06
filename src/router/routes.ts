@@ -33,6 +33,16 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/pages/PendingJob/PendingJobsPage.vue'),
         meta: { requiresAuth: true },
       },
+      {
+        path: '/supplier-payments',
+        component: () => import('@/pages/SupplierPayment/SupplierPaymentsPage.vue'),
+        meta: { requiresAuth: true },
+      },
+      {
+        path: '/product-suppliers',
+        component: () => import('@/pages/ProductSupplier/ProductSuppliersPage.vue'),
+        meta: { requiresAuth: true },
+      },
       { path: 'second', component: () => import('@/pages/SecondPage.vue') },
     ],
   },

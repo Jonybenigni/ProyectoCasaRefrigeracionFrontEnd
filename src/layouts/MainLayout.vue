@@ -87,6 +87,18 @@ const linksList: EssentialLinkProps[] = [
     icon: 'build',
     link: '/pending-jobs',
   },
+  {
+    title: 'Pagos a proveedores',
+    caption: 'Pagos hechos y pendientes',
+    icon: 'payments',
+    link: '/supplier-payments',
+  },
+  {
+    title: 'Productos por proveedor',
+    caption: 'Que producto vende cada proveedor',
+    icon: 'link',
+    link: '/product-suppliers',
+  },
 ];
 
 const leftDrawerOpen = ref(false);
