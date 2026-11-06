@@ -1,38 +1,33 @@
-# Quasar App (refrigeracionjb)
+# Casa de Refrigeración: frontend
 
-## Install the dependencies
+Frontend del sistema para un local de refrigeración. Trabajo de EDI 3.
+Hecho con Quasar, Vue 3, TypeScript, Pinia y Axios.
 
-```bash
-pnpm install
-# or: yarn/npm/bun install
-```
+La API está en [ProyectoCasaRefrigeracion](https://github.com/Jonybenigni/ProyectoCasaRefrigeracion). **Hay que tenerla corriendo antes de entrar.**
 
-### Start the app in development mode (HMR, error reporting, etc.)
+## Qué hace falta
 
-```bash
-quasar dev
-```
+- **Node.js** 22.12 o más nuevo (o la versión 24)
 
-### Format & Lint the files
+## Cómo levantarlo
+
+En la carpeta del proyecto:
 
 ```bash
-pnpm run lint
-# or: yarn/npm/bun run lint
+npm install
 ```
-
-...or just check formatting & linting:
 
 ```bash
-pnpm run lint:check
-# or: yarn/npm/bun run lint:check
+npm run dev
 ```
 
-### Build the app for production
+Se abre solo en `http://localhost:9000`. La API acepta pedidos del puerto 9000 y del 9001.
 
-```bash
-quasar build
-```
+## Usuario para entrar
 
-### Customize the configuration
+- Email: `admin@refrigeracion.com`
+- Contraseña: `Refri2026!`
 
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-file).
+## Qué tiene
+
+Login con JWT y ABM de Proveedores, Clientes, Productos, Tareas, Trabajos pendientes, Pagos a proveedores y Productos por proveedor.
