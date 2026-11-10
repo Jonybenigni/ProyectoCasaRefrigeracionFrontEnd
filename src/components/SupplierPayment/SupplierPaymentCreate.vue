@@ -126,8 +126,8 @@ async function onSubmit() {
       await supplierPaymentStore.create(form.value);
     }
     emit('close');
-  } catch {
-    notificarError('No se pudo guardar el pago');
+  } catch (e) {
+    notificarError('No se pudo guardar el pago', e);
   }
 }
 </script>

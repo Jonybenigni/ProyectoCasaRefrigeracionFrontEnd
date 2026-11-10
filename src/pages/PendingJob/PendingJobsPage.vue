@@ -159,8 +159,8 @@ async function eliminar() {
     if (idABorrar.value !== null) {
       await pendingJobStore.borrar(idABorrar.value);
     }
-  } catch {
-    notificarError('No se pudo eliminar el trabajo');
+  } catch (e) {
+    notificarError('No se pudo eliminar el trabajo', e);
   } finally {
     confirmandoBaja.value = false;
     recargar();

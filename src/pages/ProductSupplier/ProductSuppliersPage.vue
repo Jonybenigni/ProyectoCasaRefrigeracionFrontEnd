@@ -116,8 +116,8 @@ async function eliminar() {
     if (idABorrar.value !== null) {
       await productSupplierStore.borrar(idABorrar.value);
     }
-  } catch {
-    notificarError('No se pudo eliminar la relación');
+  } catch (e) {
+    notificarError('No se pudo eliminar la relación', e);
   } finally {
     confirmandoBaja.value = false;
     recargar();

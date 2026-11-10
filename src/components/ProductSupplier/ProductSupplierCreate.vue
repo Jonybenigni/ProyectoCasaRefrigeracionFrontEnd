@@ -88,8 +88,8 @@ async function onSubmit() {
   try {
     await productSupplierStore.create(form.value);
     emit('close');
-  } catch {
-    notificarError('No se pudo guardar la relación');
+  } catch (e) {
+    notificarError('No se pudo guardar la relación', e);
   }
 }
 </script>

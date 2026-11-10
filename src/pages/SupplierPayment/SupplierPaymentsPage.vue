@@ -157,8 +157,8 @@ async function eliminar() {
     if (idABorrar.value !== null) {
       await supplierPaymentStore.borrar(idABorrar.value);
     }
-  } catch {
-    notificarError('No se pudo eliminar el pago');
+  } catch (e) {
+    notificarError('No se pudo eliminar el pago', e);
   } finally {
     confirmandoBaja.value = false;
     recargar();

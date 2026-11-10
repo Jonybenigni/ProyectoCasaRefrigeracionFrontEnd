@@ -115,8 +115,8 @@ async function onSubmit() {
       await supplierStore.create(form.value);
     }
     emit('close');
-  } catch {
-    notificarError('No se pudo guardar el proveedor');
+  } catch (e) {
+    notificarError('No se pudo guardar el proveedor', e);
   }
 }
 </script>

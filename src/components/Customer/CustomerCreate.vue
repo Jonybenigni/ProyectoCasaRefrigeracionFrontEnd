@@ -108,8 +108,8 @@ async function onSubmit() {
       await customerStore.create(form.value);
     }
     emit('close');
-  } catch {
-    notificarError('No se pudo guardar el cliente');
+  } catch (e) {
+    notificarError('No se pudo guardar el cliente', e);
   }
 }
 </script>

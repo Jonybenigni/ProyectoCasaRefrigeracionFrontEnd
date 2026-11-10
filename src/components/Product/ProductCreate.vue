@@ -131,8 +131,8 @@ async function onSubmit() {
       await productStore.create(form.value);
     }
     emit('close');
-  } catch {
-    notificarError('No se pudo guardar el producto');
+  } catch (e) {
+    notificarError('No se pudo guardar el producto', e);
   }
 }
 </script>

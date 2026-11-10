@@ -142,8 +142,8 @@ async function eliminar() {
     if (idABorrar.value !== null) {
       await productStore.borrar(idABorrar.value);
     }
-  } catch {
-    notificarError('No se pudo eliminar el producto');
+  } catch (e) {
+    notificarError('No se pudo eliminar el producto', e);
   } finally {
     confirmandoBaja.value = false;
     recargar();

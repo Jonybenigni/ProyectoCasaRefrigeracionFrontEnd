@@ -142,8 +142,8 @@ async function onSubmit() {
       await pendingJobStore.create(form.value);
     }
     emit('close');
-  } catch {
-    notificarError('No se pudo guardar el trabajo');
+  } catch (e) {
+    notificarError('No se pudo guardar el trabajo', e);
   }
 }
 </script>

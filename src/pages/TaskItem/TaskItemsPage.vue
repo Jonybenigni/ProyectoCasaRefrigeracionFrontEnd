@@ -148,8 +148,8 @@ async function eliminar() {
     if (idABorrar.value !== null) {
       await taskItemStore.borrar(idABorrar.value);
     }
-  } catch {
-    notificarError('No se pudo eliminar la tarea');
+  } catch (e) {
+    notificarError('No se pudo eliminar la tarea', e);
   } finally {
     confirmandoBaja.value = false;
     recargar();

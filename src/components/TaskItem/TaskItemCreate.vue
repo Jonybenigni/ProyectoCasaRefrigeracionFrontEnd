@@ -111,8 +111,8 @@ async function onSubmit() {
       await taskItemStore.create(form.value);
     }
     emit('close');
-  } catch {
-    notificarError('No se pudo guardar la tarea');
+  } catch (e) {
+    notificarError('No se pudo guardar la tarea', e);
   }
 }
 </script>

@@ -134,8 +134,8 @@ async function eliminar() {
     if (idABorrar.value !== null) {
       await supplierStore.borrar(idABorrar.value);
     }
-  } catch {
-    notificarError('No se pudo eliminar el proveedor');
+  } catch (e) {
+    notificarError('No se pudo eliminar el proveedor', e);
   } finally {
     confirmandoBaja.value = false;
     recargar();

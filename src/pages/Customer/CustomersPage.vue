@@ -133,8 +133,8 @@ async function eliminar() {
     if (idABorrar.value !== null) {
       await customerStore.borrar(idABorrar.value);
     }
-  } catch {
-    notificarError('No se pudo eliminar el cliente');
+  } catch (e) {
+    notificarError('No se pudo eliminar el cliente', e);
   } finally {
     confirmandoBaja.value = false;
     recargar();
